@@ -1,0 +1,54 @@
+.container-cards {
+  position: relative;
+}
+/* border color to img */
+.br-color {
+  border: 3px solid #23b1ce;
+  box-shadow: 0px 0px 25px 0px #23b1ce;
+}
+
+/* border color to cards */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(33, 37, 41, 0.9);
+  border: 1px solid #82fe47;
+  transition: transform 0.2s;
+  box-shadow: 0px 0px 25px 0px #82fe47;
+}
+
+.container-cards:hover .overlay {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.text-color {
+  color: #23b1ce;
+}
+
+.text {
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+/* effect to banner */
+.fx {
+  animation: blinker 0.1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

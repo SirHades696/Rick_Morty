@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Rick and Morty{% endblock %}
+{% block content %}
+    <div class='text-white'>
+        <div class='container'>
+            <img src='{{ url_for('static', filename='/img/banner.png')}}'
+                 class='img-fluid mx-auto d-block fx'
+                 width='900'/>
+        </div>
+        <div class='container'>
+            <header class='d-flex justify-content-between align-items-center'>
+                {% if page != 1: %}
+                    <form method="post">
+                        <button class='btn btn-primary my-4 rounded'
+                                name='counter'
+                                value='{{ page - 1 }}'>&#8249;&#8249;&#8249;</button>
+                    </form>
+                {% else %}
+                    <p></p>
+                {% endif %}
+                {% if page + 1 != 43: %}
+                    <form method="post">
+                        <button class='btn btn-primary my-4 rounded'
+                                name='counter'
+                                value='{{ page + 1 }}'>&#8250;&#8250;&#8250;</button>
+                    </form>
+                {% else %}
+                    <p></p>
+                {% endif %}
+            </header>
+            <div class='row'>
+                {% for i in results: %}
+                    <div key= {{ i['id'] }} class='col-md-4 container-cards'>
+                        <div class='text-center p-4'>
+                            <img class='img-fluid rounded-pill br-color'
+                                 src="{{ i['image'] }}"
+                                 alt="{{ i['name'] }}"/>
+                            <div class="overlay rounded">
+                                <div class="text">
+                                    <p>
+                                        <h5 class='text-center text-color'>{{ i['name'] }}</h5>
+                                    </p>
+                                    <p>
+                                        <b class='text-color'>Gender:</b> {{ i['gender'] }}
+                                    </p>
+                                    {% if  i['status'] == "Alive" %}
+                                        {% set stat = "color:#34eb3d"  %}
+                                    {% elif i['status'] == 'Dead' %}
+                                        {% set stat = "color:#ff1239" %}
+                                    {% else %}
+                                        {% set stat = "color:#ffeb12" %}
+                                    {% endif %}
+                                    <p>
+                                        <b class='text-color'>Status:</b> <i style='{{ stat }}'>{{ i['status'] }}</i>
+                                    </p>
+                                    <p>
+                                        <b class='text-color'>Specie:</b> {{ i['species'] }}
+                                    </p>
+                                    <p>
+                                        <b class='text-color'>Type:</b> {{ '???' if i['type']== "" else i['type'] }}
+                                    </p>
+                                    <p>
+                                        <b class='text-color'>Origin:</b> {{ i['origin']['name'] }}
+                                    </p>
+                                    <p>
+                                        <b class='text-color'>Location:</b> {{ i['location']['name'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
