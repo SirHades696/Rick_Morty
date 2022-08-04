@@ -4,11 +4,11 @@ Inspired by [`FaztWeb`](https://github.com/FaztWeb/react-rick-and-morty)
 
 ## Screenshots
 
-[Screenshot](doc/1.png)
+![Screenshot](doc/1.png)
 
-[Screenshot](doc/2.png)
+![Screenshot](doc/2.png)
 
-[Screenshot](doc/3.png)
+![Screenshot](doc/3.png)
 
 Esta aplicación esta hecha con Flask y despliega los datos extraídos desde la API de [`Rick and Morty`](https://rickandmortyapi.com/), muestra la información básica de cada personaje como:
 
