@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+
 .container-cards {
   position: relative;
 }
@@ -32,7 +34,8 @@
 }
 
 .text {
-  font-size: 15px;
+  font-family: "Pangolin", cursive;
+  font-size: 16px;
   position: absolute;
   top: 50%;
   left: 50%;
